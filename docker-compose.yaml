@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  quiz:
+    build: . 
+    command: >
+      sh -c " 
+              python manage.py makemigrations &&
+              python manage.py migrate &&
+              python manage.py runserver 0.0.0.0:8000"
+    volumes: 
+      - .:/app
+    ports: 
+      - 8000:8000
+    image: quiz-django:v1.0
+    container_name: quiz-app
+    links:
+      - db
+    
+  db:
+    image: postgres
+    restart: always
+    volumes: 
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres-db-quiz
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    container_name: db-postgres
+  
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    volumes:
+      - ./data/pgadmin-data:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL:  root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    links:
+      - db  
