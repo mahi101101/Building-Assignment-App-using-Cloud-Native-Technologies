@@ -41,19 +41,26 @@ python manage.py createsuperuser
 
 ### Step - 7
 The app will be up and running on localhost:8000
+```
+http://127.0.0.1:8000/
+```
 
 ### Step - 8 (optional steps)
 To view the Database Stats open localhost:5050 which is pgadmin4 page used to moniter postgresdb. <br>
-UserName: root@root.com<br>
+```
+http://127.0.0.1:5050/
+```
+```
+UserName: root@root.com
 Password: root
-
+```
 ### Step - 9 
 Click on add server and add the quiz-app db server 
-<br><br> 
-HostName: db
-Username: postgres
-Password: postgres <br> <br>
-
+```
+HostName: db 
+Username: postgres 
+Password: postgres 
+```
 Click add server.
 
 ### Step - 10 
@@ -93,6 +100,9 @@ kubectl get pod
 
 ### Step - 7
 When all the pods are up and running the application is live to be used at localhost:8000.
+```
+http://127.0.0.1:8000/
+```
 
 
 ## Changes required in contact us page
