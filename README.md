@@ -1,4 +1,4 @@
-# Building-Web-App-using-Cloud-Native-Technologies
+# Building-Assignment-App-using-Cloud-Native-Technologies
 This is a Django based cloud deploy ready web app. This is an online quiz platform where teacher can add their course quizes and share them to their students and get evalutated for internal marks.
 
 ## Requirements to run this application locally
